@@ -4,7 +4,7 @@ Oxide plugin to detect and rate limit players (via kick) who attempt to spam com
 
 ## Usage
 
-Configure the *interval* and *threshold* variables to 
+Configure the *interval* and *threshold* variables to suit your needs.  As configured issuing more than 15 commands in an 8 second window will result in a kick.
 
 
 ## TODO

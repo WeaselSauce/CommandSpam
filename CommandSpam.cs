@@ -26,10 +26,10 @@ namespace Oxide.Plugins
             if (IsFlooding(player))
             {
                 player.Kick(string.Concat("Kicked: ", "Command spamming detected by server."));
-		Puts($"COMMAND SPAM DETECTION : {player.Name} auto-kicked");
+			Puts($"COMMAND SPAM DETECTION : {player.Name} auto-kicked");
                 return true;
             }
-	    return null;
+	    	return null;
         }
 
         private double GetNextCommandTime(IPlayer player)

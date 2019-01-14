@@ -12,8 +12,11 @@ namespace Oxide.Plugins
     class CommandSpam : RustPlugin
     {
         
-	public float cooldown = 8.0f;
+        // configure command tolerances (threshold) within an interval of time (cooldown)
+        // example:  no more than 15 commands issued within any 8 second period
+	    public float cooldown = 8.0f; 
         public int threshold = 15;
+
         public Dictionary<string, DateTime> cooldowns = new Dictionary<string, DateTime>();
         public Dictionary<string, int> thresholds = new Dictionary<string, int>();
 

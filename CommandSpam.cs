@@ -14,7 +14,7 @@ namespace Oxide.Plugins
         
         // configure command tolerances (threshold) within an interval of time (cooldown)
         // example:  no more than 15 commands issued within any 8 second period
-	    public float cooldown = 8.0f; 
+	public float cooldown = 8.0f; 
         public int threshold = 15;
 
         public Dictionary<string, DateTime> cooldowns = new Dictionary<string, DateTime>();
@@ -26,7 +26,7 @@ namespace Oxide.Plugins
             if (IsFlooding(player))
             {
                 player.Kick(string.Concat("Kicked: ", "Command spamming detected by server."));
-			Puts($"COMMAND SPAM DETECTION : {player.Name} auto-kicked");
+		Puts($"COMMAND SPAM DETECTION : {player.Name} auto-kicked");
                 return true;
             }
 	    	return null;
@@ -49,17 +49,12 @@ namespace Oxide.Plugins
                     if (thresholds.ContainsKey(player.Id))
                     {
                         if (thresholds[player.Id] > threshold)
-                        {
                             return true;
-                        }
 
                         if (action != null)
-                        {
                             thresholds[player.Id] = ++thresholds[player.Id];
-                            cooldowns.Remove(player.Id);
-                            cooldowns.Add(player.Id, DateTime.Now);
-                        }
-                        return false;
+
+			return false;
                     }
 
                     if (!thresholds.ContainsKey(player.Id))
